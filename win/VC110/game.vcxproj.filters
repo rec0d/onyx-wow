@@ -1108,5 +1108,8 @@
     <ClInclude Include="..\..\src\game\LuaEngine\HookMgr.h">
       <Filter>LuaEngine</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\game\LuaEngine\ElunaCreatureAI.h">
+      <Filter>LuaEngine</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
