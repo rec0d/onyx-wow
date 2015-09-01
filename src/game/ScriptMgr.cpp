@@ -34,8 +34,6 @@
 #include "Mail.h"
 #include "LuaEngine.h"
 
-#include "revision_nr.h"
-
 ScriptMapMapName sQuestEndScripts;
 ScriptMapMapName sQuestStartScripts;
 ScriptMapMapName sSpellScripts;
@@ -2438,13 +2436,6 @@ ScriptLoadResult ScriptMgr::LoadScriptLibrary(const char* libName)
     GET_SCRIPT_HOOK_PTR(m_pOnAuraDummy,                "AuraDummy");
 
 #   undef GET_SCRIPT_HOOK_PTR
-
-    if (strcmp(pGetMangosRevStr(), REVISION_NR) != 0)
-    {
-        m_pOnFreeScriptLibrary = NULL;                      // prevent call before init
-        UnloadScriptLibrary();
-        return SCRIPT_LOAD_ERR_OUTDATED;
-    }
 
     m_pOnInitScriptLibrary();
     return SCRIPT_LOAD_OK;
