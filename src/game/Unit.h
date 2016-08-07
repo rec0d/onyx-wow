@@ -1714,7 +1714,7 @@ class MANGOS_DLL_SPEC Unit : public WorldObject
         bool IsInFeralForm() const
         {
             ShapeshiftForm form = GetShapeshiftForm();
-            return form == FORM_CAT || form == FORM_BEAR || form == FORM_DIREBEAR;
+            return form == FORM_CAT || form == FORM_BEAR || form == FORM_DIREBEAR && form != FORM_STEALTH;
         }
 
         bool IsInDisallowedMountForm() const
