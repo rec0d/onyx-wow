@@ -1714,14 +1714,14 @@ class MANGOS_DLL_SPEC Unit : public WorldObject
         bool IsInFeralForm() const
         {
             ShapeshiftForm form = GetShapeshiftForm();
-            return form == FORM_CAT || form == FORM_BEAR || form == FORM_DIREBEAR && form != FORM_STEALTH;
+            return form == FORM_CAT || form == FORM_BEAR || form == FORM_DIREBEAR;
         }
 
         bool IsInDisallowedMountForm() const
         {
             ShapeshiftForm form = GetShapeshiftForm();
             return form != FORM_NONE && form != FORM_BATTLESTANCE && form != FORM_BERSERKERSTANCE && form != FORM_DEFENSIVESTANCE &&
-                   form != FORM_SHADOW;
+                   form != FORM_SHADOW && form != FORM_STEALTH;
         }
 
         float m_modMeleeHitChance;
